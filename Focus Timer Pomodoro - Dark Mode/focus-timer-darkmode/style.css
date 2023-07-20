@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 62.5%;
+    --cc-h1: #323238;
+    --bg-card: #E1E1E6;
+    --bg-card-hover: #c4c4c4;
+    --bg-card-selected: #02799D;
+    --fill-svg-selected: #fff;
+    --fill-svg: #323238;
+    --bg-input-range: #323238;
+    --bg-input-range-selected: #fff;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    transition: .3s;
+}
+.hide {
+    display: none;
+}
+.typeMode {
+    position: absolute;
+    right: 6rem;
+    top: 6rem;
+    cursor: pointer;
+}
+.container {
+    display: flex;
+    width: min(82.1rem, 90%);
+    margin: 0 auto;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.time {
+    font-size: 12.6rem;
+    display: flex;
+    color: var(--cc-h1);
+    line-height: 14.8rem;
+    padding-bottom: 2.7rem;
+}
+.control {
+    display: flex;
+    gap: 3.2rem;
+}
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.control button svg path {
+    fill: var(--fill-svg);
+}
+.control button:hover svg path {
+    fill: var(--bg-card-selected);
+    transition: .2s;
+}
+.climate {
+    display: grid;
+    grid-template-areas: "a b"
+    "c d";
+    gap: 3.2rem;
+}
+.climate :nth-child(1) {
+    grid-area: a;
+}
+.climate :nth-child(2) {
+    grid-area: b;
+}
+.climate :nth-child(3) {
+    grid-area: c;
+}
+.climate :nth-child(4) {
+    grid-area: d;
+}
+.card {
+    width: 13.8rem;
+    height: 15.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-card);
+    border-radius: 2.4rem;
+    cursor: pointer;
+    transition: .2s;
+    flex-direction: column;
+    gap: 3.8rem;
+}
+.card input {
+    appearance: none;
+    height: .4rem;
+    width: 9rem;
+    border-radius: .5rem;
+    background:var(--bg-input-range);
+    cursor: pointer;
+}
+.card input::-webkit-slider-thumb {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 99rem;
+    appearance: none;
+    background: var(--bg-input-range);
+}
+.card svg path {
+    fill: var(--fill-svg);
+}
+.card:hover {
+    background-color: var(--bg-card-hover);
+}
+.climate .selected {
+    background-color: var(--bg-card-selected);
+}
+.climate .selected input {
+    background:var(--bg-input-range-selected);
+}
+.climate .selected input::-webkit-slider-thumb {
+    background:var(--bg-input-range-selected);
+}
+.climate .selected svg path {
+    fill: var(--fill-svg-selected);
+}
+@media (max-width: 720px) {
+    .container {
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 5rem;
+    }
+    .typeMode {
+        right: 1.4rem;
+        top: 1.4rem;
+    }
+}
